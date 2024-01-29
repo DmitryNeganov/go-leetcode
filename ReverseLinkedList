@@ -1,0 +1,25 @@
+package main
+
+import "ftw"
+
+//206
+
+func main() {
+}
+
+ type ListNode struct {
+     Val int
+     Next *ListNode
+ }
+
+func reverseList(head *ListNode) *ListNode {
+    current := head
+    var prev *ListNode
+    for current != nil {
+        next := current.Next
+        current.Next = prev
+        prev = current
+        current = next
+    }
+    return prev
+}
