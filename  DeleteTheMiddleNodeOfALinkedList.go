@@ -1,29 +1,25 @@
 package main
 
-import "ftw"
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
- func deleteMiddle(head *ListNode) *ListNode {
+func deleteMiddle(head *ListNode) *ListNode {
 
-    if head == nil || head.Next == nil {
-        return nil
-    }
+	if head == nil || head.Next == nil {
+		return nil
+	}
 
-    fast := head.Next.Next
-    slow := head
+	fast := head.Next.Next
+	slow := head
 
-    for fast != nil && fast.Next != nil {
-        fast = fast.Next.Next
-        slow = slow.Next
-    }
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next.Next
+		slow = slow.Next
+	}
 
-    slow.Next = slow.Next.Next
+	slow.Next = slow.Next.Next
 
-    return head
+	return head
 }
