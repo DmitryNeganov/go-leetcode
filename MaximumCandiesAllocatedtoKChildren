@@ -1,5 +1,4 @@
-
-
+//2226. Maximum Candies Allocated to K Children
 //O(n*log(n))
 func maximumCandies(candies []int, k int64) int {
     left := 1
