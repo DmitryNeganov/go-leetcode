@@ -1,0 +1,33 @@
+
+
+//O(n*log(n))
+func maximumCandies(candies []int, k int64) int {
+    left := 1
+    right := 0
+
+    for _, v := range candies {
+        if v > right {
+            right = v
+        }
+    }
+
+    res := 0
+
+    for left <= right {
+        var mid int
+        mid = (left + right) / 2
+        var counter int = 0
+        for _, v := range candies {
+            counter += v / mid
+        }
+        if int64(counter) >= k {
+            res = mid
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    
+    }
+
+    return res
+}
