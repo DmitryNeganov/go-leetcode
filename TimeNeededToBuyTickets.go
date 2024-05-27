@@ -1,3 +1,4 @@
+//2073. Time Needed to Buy Tickets
 func timeRequiredToBuy(tickets []int, k int) int {
     counter := 0
 
